@@ -1,12 +1,7 @@
 const { User } = require('../models/index')
 const asyncHandler = require('express-async-handler');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken')
 const { v4: uuidv4 } = require('uuid');
 
-
-const ACCESS_TOKEN_SECRET = "authnow";
-const REFRESH_TOKEN_SECRET = "authnow";
 
 const signUp = asyncHandler(async (req, res) => {
       const { username, email, password, role, place, phoneNumber } = req.body;
