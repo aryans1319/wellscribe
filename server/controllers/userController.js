@@ -29,7 +29,7 @@ const signUp = asyncHandler(async (req, res) => {
           place: place,
           phoneNumber: phoneNumber  
         });
-  
+        req.io.emit('newUser', newUser);
         res.status(201).json({
           user: newUser,
         });
